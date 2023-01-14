@@ -1,0 +1,73 @@
+.maner {
+    -fx-background-color: #FFFFFF;
+}
+
+.img_side {
+    -fx-background-color: #478d8d;
+}
+
+.img_side AnchorPane FontAwesomeIconView  {
+    -fx-fill: #FFFFFF;
+}
+
+.img_side #admin_lbl {
+    -fx-text-fill: #FFFFFF;
+}
+
+.img_side #modifyad_btn {
+    -fx-background-color: #EEEEEE;
+    -fx-border-radius: 0px;
+    -fx-text-fill: #478d8d;
+    -fx-effect: dropshadow(two-pass-box, #555555,3,0,0,3);
+}
+
+.img_side #modifyad_btn:hover {
+    -fx-background-color: #c1d9d9;
+    -fx-text-fill: #326565;
+    -fx-font-weight: bold;
+    -fx-padding: 2px;
+    -fx-effect: dropshadow(two-pass-box, #000000,2,0,0,1);
+}
+.img_side #signout_btn {
+    -fx-background-color: none;
+    -fx-border-color: none;
+    -fx-font-size: 30px;
+}
+
+.img_side #signout_btn FontAwesomeIconView:hover {
+    -fx-effect: dropshadow(three-pass-box, #000000,2,0,0,2);
+    -fx-fill: #ff0000;
+}
+
+.buttons_box Button {
+    -fx-border-style: none;
+    -fx-border-radius: 0;
+    -fx-font-weight: bold;
+    -fx-font-size: 22px;
+    -fx-pref-height: 40px;
+    -fx-wrap-text: none;
+}
+
+.buttons_box #book_btn {
+    -fx-background-color: linear-gradient(to right, #5070c2, #1e3ac9);
+    -fx-text-fill: #e1ece8;
+
+}
+/*TODO: hover btns */
+.buttons_box #res_btn {
+    -fx-background-color: linear-gradient(to right, #d02c2c, #c52555);
+    -fx-text-fill: #cff346;
+
+}
+
+.buttons_box #std_btn {
+    -fx-background-color: linear-gradient(to right, #1ad71d, #17b981);
+    -fx-text-fill: #a930d9;
+
+
+}
+.buttons_box #vis_btn {
+    -fx-background-color: linear-gradient(to right, #f4ff00, #ff9e0d);
+    -fx-text-fill: #b00a0a;
+
+}
