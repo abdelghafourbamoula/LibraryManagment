@@ -12,6 +12,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="sbt: de.jensd:fontawesomefx-commons:9.1.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: de.jensd:fontawesomefx-fontawesome:4.7.0-9.1.2:jar" level="project" />
     <orderEntry type="library" name="sbt: org.openjfx:javafx-base:15.0.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.openjfx:javafx-base:15.0.1:win:jar" level="project" />
     <orderEntry type="library" name="sbt: org.openjfx:javafx-controls:15.0.1:jar" level="project" />

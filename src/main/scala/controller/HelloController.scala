@@ -1,6 +1,6 @@
 package controller
 
-import javafx.fxml.FXML
+
 import scalafx.event.ActionEvent
 import scalafx.scene.control.{Button, Label}
 import scalafxml.core.macros.sfxml
