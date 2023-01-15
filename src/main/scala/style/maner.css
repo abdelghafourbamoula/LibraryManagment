@@ -14,27 +14,27 @@
     -fx-text-fill: #FFFFFF;
 }
 
-.img_side #modifyad_btn {
+.img_side #modifyad_btn, #searsh_btn {
     -fx-background-color: #EEEEEE;
     -fx-border-radius: 0px;
     -fx-text-fill: #478d8d;
     -fx-effect: dropshadow(two-pass-box, #555555,3,0,0,3);
 }
 
-.img_side #modifyad_btn:hover {
+.img_side #modifyad_btn:hover, #searsh_btn:hover {
     -fx-background-color: #c1d9d9;
     -fx-text-fill: #326565;
     -fx-font-weight: bold;
     -fx-padding: 2px;
     -fx-effect: dropshadow(two-pass-box, #000000,2,0,0,1);
 }
-.img_side #logout_btn {
+.img_side #logout_btn, #back_btn {
     -fx-background-color: none;
     -fx-border-color: none;
     -fx-font-size: 30px;
 }
 
-.img_side #logout_btn FontAwesomeIconView:hover {
+.img_side #logout_btn FontAwesomeIconView:hover, #back_btn FontAwesomeIconView:hover {
     -fx-effect: dropshadow(three-pass-box, #000000,2,0,0,2);
     -fx-fill: #ff0000;
 }
@@ -91,5 +91,61 @@
     -fx-background-color: linear-gradient(to right, #e7f160, #f3a52f);
     -fx-text-fill: #f53b3b;
     -fx-effect: dropshadow(two-pass-box, #ef9e25,2,1,1,2);
+}
+
+/* update admin */
+#username_fld, #password_fld {
+    -fx-text-fill: #478d8d;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-spacing: 1px;
+}
+
+.modify_box Text {
+    -fx-text-fill: #478d8d;
+}
+
+.modify_box TextField {
+    -fx-border-color: #478d8d;
+    -fx-border-radius: 6px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgba(228, 246, 246, 0.8);
+}
+
+.modify_box Button {
+    -fx-pref-width: 80px;
+    -fx-pref-height: 10px;
+    -fx-border-style: None;
+    -fx-border-radius: 10px;
+}
+
+.modify_box #reset_btn {
+    -fx-background-color: #1498be;
+    -fx-text-fill: #FFFFFF;
+}
+
+.modify_box #reset_btn:hover {
+    -fx-background-color: #2fc4f1;
+    -fx-font-weight: bold;
+}
+
+.modify_box #clear_btn {
+    -fx-background-color: #cb4800;
+    -fx-text-fill: #FFFFFF;
+}
+
+.modify_box #clear_btn:hover {
+    -fx-background-color: #ff5a04;
+    -fx-font-weight: bold;
+}
+
+.modify_box #update_btn {
+    -fx-background-color: #0e9644;
+    -fx-text-fill: #FFFFFF;
+}
+
+.modify_box #update_btn:hover {
+    -fx-background-color: #07b74b;
+    -fx-font-weight: bold;
 }
 

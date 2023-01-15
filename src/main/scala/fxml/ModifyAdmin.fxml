@@ -1,81 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="450.0" prefWidth="719.0" styleClass="maner" stylesheets="@../style/maner.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Maner">
+<AnchorPane prefHeight="450.0" prefWidth="719.0" styleClass="maner" stylesheets="@../style/maner.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyAdmin">
    <children>
-      <VBox layoutX="394.0" layoutY="70.0" prefHeight="272.0" prefWidth="278.0" spacing="35.0" styleClass="buttons_box">
+      <VBox layoutX="376.0" layoutY="36.0" prefHeight="374.0" prefWidth="306.0" spacing="10.0" styleClass="modify_box">
          <children>
-            <Button fx:id="dash_btn" graphicTextGap="30.0" layoutX="10.0" layoutY="181.0" mnemonicParsing="false" onAction="#toDashboard" prefHeight="44.0" prefWidth="299.0" styleClass="stusbtn" text="Dashboard">
-               <graphic>
-                  <FontAwesomeIconView fill="#b00a0a" glyphName="PIE_CHART" size="36" />
-               </graphic>
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <Button fx:id="book_btn" graphicTextGap="30.0" mnemonicParsing="false" onAction="#toBooks" prefHeight="69.0" prefWidth="278.0" styleClass="bookbtn" text="   Books">
-               <graphic>
-                  <FontAwesomeIconView fill="#e1ece8" glyphName="BOOK" size="36" />
-               </graphic>
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-            <Button fx:id="res_btn" graphicTextGap="25.0" mnemonicParsing="false" onAction="#toReservations" prefHeight="47.0" prefWidth="280.0" styleClass="resbtn" text="Reservations">
-               <graphic>
-                  <FontAwesomeIconView fill="#cff346" glyphName="TICKET" size="36" />
-               </graphic>
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
-            <Button fx:id="std_btn" graphicTextGap="30.0" mnemonicParsing="false" onAction="#toStudents" prefHeight="44.0" prefWidth="299.0" styleClass="stusbtn" text="  Students">
-               <graphic>
-                  <FontAwesomeIconView fill="#8730d9" glyphName="USERS" size="36" />
-               </graphic>
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+            <TextField fx:id="fname_fld" />
+            <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
+            <TextField fx:id="lname_fld" layoutX="10.0" layoutY="61.0" />
+            <Text layoutX="10.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+            <TextField fx:id="username_fld" layoutX="10.0" layoutY="176.0" />
+            <Text layoutX="10.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <TextField fx:id="password_fld" layoutX="10.0" layoutY="290.0" />
+            <Text layoutX="10.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password" />
+            <TextField fx:id="confirm_fld" layoutX="10.0" layoutY="225.0" />
+            <HBox alignment="CENTER" prefHeight="79.0" prefWidth="306.0" spacing="20.0">
+               <children>
+                  <Button fx:id="clear_btn" mnemonicParsing="false" onAction="#clearFields" text="Clear" />
+                  <Button fx:id="reset_btn" layoutX="73.0" layoutY="29.0" mnemonicParsing="false" onAction="#resetFields" text="Reset" />
+                  <Button fx:id="update_btn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateAdmin" text="Update" />
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
          </children>
       </VBox>
       <VBox styleClass="img_side">
          <children>
             <AnchorPane prefHeight="450.0" prefWidth="337.0">
                <children>
-                  <ImageView fitHeight="289.0" fitWidth="348.0" layoutY="146.0" pickOnBounds="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="146.0">
-                     <image>
-                        <Image url="@../images/maner.png" />
-                     </image>
-                  </ImageView>
-                  <AnchorPane layoutX="15.0" layoutY="32.0" prefHeight="106.0" prefWidth="286.0" styleClass="admin_label">
+                  <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="106.0" prefWidth="286.0" styleClass="admin_label">
                      <children>
-                        <FontAwesomeIconView glyphName="USER" layoutX="22.0" layoutY="28.0" size="28" wrappingWidth="31.771440505981445" />
-                        <Label fx:id="admin_lbl" layoutX="54.0" layoutY="5.0" prefHeight="28.0" prefWidth="232.0" text="Welcome, Admin">
-                           <font>
-                              <Font name="Berlin Sans FB Demi Bold" size="20.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="modifyad_btn" layoutX="38.0" layoutY="53.0" mnemonicParsing="false" onAction="#modifyProfile" prefHeight="33.0" prefWidth="162.0" text="Modify Admin Profile">
-                           <font>
-                              <Font name="Corbel" size="13.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="logout_btn" layoutX="250.0" layoutY="41.0" mnemonicParsing="false" onAction="#logout" prefHeight="43.0" prefWidth="72.0">
+                        <Button fx:id="back_btn" layoutX="-10.0" layoutY="-16.0" mnemonicParsing="false" onAction="#back" prefHeight="43.0" prefWidth="72.0">
                            <graphic>
-                              <FontAwesomeIconView glyphName="SIGN_OUT" wrappingWidth="32.0" />
+                              <FontAwesomeIconView glyphName="ARROW_LEFT" wrappingWidth="32.0" />
                            </graphic>
                         </Button>
+                        <Label layoutX="82.0" layoutY="81.0" text="Searsh for your profile" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee" size="16.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
+                  <Button fx:id="searsh_btn" layoutX="111.0" layoutY="290.0" mnemonicParsing="false" onAction="#searshAdmin" prefHeight="34.0" prefWidth="114.0" text="Searsh">
+                     <font>
+                        <Font name="Corbel" size="13.0" />
+                     </font>
+                  </Button>
+                  <FontAwesomeIconView glyphName="USER" layoutX="42.0" layoutY="194.0" size="28" wrappingWidth="31.771440505981445" />
+                  <TextField fx:id="user_fld" layoutX="84.0" layoutY="167.0" prefHeight="34.0" prefWidth="202.0" />
+                  <TextField fx:id="passwd_fld" layoutX="84.0" layoutY="225.0" prefHeight="34.0" prefWidth="202.0" />
+                  <FontAwesomeIconView glyphName="KEY" layoutX="42.0" layoutY="252.0" size="28" wrappingWidth="31.771440505981445" />
+                  <Label fx:id="error_lbl" layoutX="43.0" layoutY="368.0" prefHeight="43.0" prefWidth="253.0" textFill="#f70000">
+                     <font>
+                        <Font name="Leelawadee UI" size="16.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>

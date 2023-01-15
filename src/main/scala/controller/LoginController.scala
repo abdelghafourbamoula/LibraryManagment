@@ -25,7 +25,8 @@ class LoginController(
 
     if (type_ == "ADMIN") {
       val admin = ConnectDB.loginAdmin(username_fld.getText(), password_fld.getText())
-      if (admin){
+
+      if (admin.length != 0){
         val root = FXMLView(getClass.getResource("../fxml/Maner.fxml"), NoDependencyResolver)
         val scene = new Scene(root)
         App.show("Admin Maner", scene)

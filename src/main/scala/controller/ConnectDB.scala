@@ -20,20 +20,29 @@ object ConnectDB {
     case e: Exception => e.printStackTrace
   }
 
-  def close(): Unit ={
-    this.connection.close()
-  }
 
-  def loginAdmin(username:String, password: String): Boolean = {
-
+  def loginAdmin(username:String, password: String): Array[String] = {
       val statement = connection.createStatement()
       val rs = statement.executeQuery("SELECT * FROM Admin WHERE username='"+username+"' AND password='"+password+"';")
-      if (rs.next)
-        return true
+      if (rs.next) {
+        val id = rs.getString("idAdmin")
+        val fname = rs.getString("firstName")
+        val lname = rs.getString("lastName")
+        val username = rs.getString("username")
+        val password = rs.getString("password")
+        return Array(id,fname,lname,username,password)
+      }
       else
-        return false
-
-//      this.close()
+        return Array()
   }
 
+  def updateAdmin(admin:Array[String]): Int ={
+    val st = connection.createStatement()
+    val rs = st.executeUpdate(s"UPDATE Admin SET firstName='${admin(1)}', lastName='${admin(2)}', username='${admin(3)}'," +
+                                s" password='${admin(4)}' WHERE idAdmin=${admin(0)};")
+    return rs
+  }
+
+
+//  this.connection.close()
 }

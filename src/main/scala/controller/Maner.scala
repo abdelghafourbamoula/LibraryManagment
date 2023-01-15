@@ -19,7 +19,12 @@ class Maner (
               private val std_btn: Button,
             ) {
 
-  def modifyProfile(e: ActionEvent): Unit = {}
+  def modifyProfile(e: ActionEvent): Unit = {
+    val root = FXMLView(getClass.getResource("../fxml/ModifyAdmin.fxml"), NoDependencyResolver)
+    val scene = new Scene(root)
+    App.show("Modify Admin", scene)
+  }
+
   def logout(e: ActionEvent): Unit ={
     val root = FXMLView(getClass.getResource("../fxml/login.fxml"), NoDependencyResolver)
     val scene = new Scene(root)
