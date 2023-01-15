@@ -27,6 +27,7 @@ val osName = System.getProperty("os.name") match {
 
 libraryDependencies ++= javafxModules.map(m => "org.openjfx" % s"javafx-$m" % "15.0.1" classifier osName)
 libraryDependencies += "de.jensd" % "fontawesomefx-fontawesome" % "4.7.0-9.1.2"
+libraryDependencies += "mysql" % "mysql-connector-java" % "8.0.31"
 
 // Fork a new JVM for 'run' and 'test:run', to avoid JavaFX double initialization problems
 fork := true

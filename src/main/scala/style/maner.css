@@ -1,5 +1,5 @@
 .maner {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #f5fafa;
 }
 
 .img_side {
@@ -28,13 +28,13 @@
     -fx-padding: 2px;
     -fx-effect: dropshadow(two-pass-box, #000000,2,0,0,1);
 }
-.img_side #signout_btn {
+.img_side #logout_btn {
     -fx-background-color: none;
     -fx-border-color: none;
     -fx-font-size: 30px;
 }
 
-.img_side #signout_btn FontAwesomeIconView:hover {
+.img_side #logout_btn FontAwesomeIconView:hover {
     -fx-effect: dropshadow(three-pass-box, #000000,2,0,0,2);
     -fx-fill: #ff0000;
 }
@@ -53,21 +53,43 @@
     -fx-text-fill: #e1ece8;
 
 }
-/*TODO: hover btns */
+
+.buttons_box #book_btn:hover {
+    -fx-background-color: linear-gradient(to right, #577dda, #1430b2);
+    -fx-text-fill: #abdcc7;
+    -fx-effect: dropshadow(two-pass-box, rgba(13, 83, 171, 0.9),2,1,1,2);
+}
+
 .buttons_box #res_btn {
     -fx-background-color: linear-gradient(to right, #d02c2c, #c52555);
     -fx-text-fill: #cff346;
+}
 
+.buttons_box #res_btn:hover {
+    -fx-background-color: linear-gradient(to right, #e15959, #d70e4b);
+    -fx-text-fill: #d6f65a;
+    -fx-effect: dropshadow(two-pass-box, rgba(168, 17, 17, 0.9),2,1,1,2);
 }
 
 .buttons_box #std_btn {
     -fx-background-color: linear-gradient(to right, #1ad71d, #17b981);
     -fx-text-fill: #a930d9;
-
-
 }
-.buttons_box #vis_btn {
+
+.buttons_box #std_btn:hover {
+    -fx-background-color: linear-gradient(to right, #7def7f, #23b986);
+    -fx-text-fill: #a14ac7;
+    -fx-effect: dropshadow(two-pass-box, rgba(28, 194, 32, 0.9),2,1,1,2);
+}
+
+.buttons_box #dash_btn {
     -fx-background-color: linear-gradient(to right, #f4ff00, #ff9e0d);
     -fx-text-fill: #b00a0a;
-
 }
+
+.buttons_box #dash_btn:hover {
+    -fx-background-color: linear-gradient(to right, #e7f160, #f3a52f);
+    -fx-text-fill: #f53b3b;
+    -fx-effect: dropshadow(two-pass-box, #ef9e25,2,1,1,2);
+}
+

@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -31,7 +32,7 @@
                 <Label text="Username " />
                 <TextField fx:id="username_fld" styleClass="input_field" />
                 <Label text="Password " />
-                <TextField fx:id="password_fld" styleClass="input_field" />
+            <PasswordField fx:id="password_fld" styleClass="input_field" />
                 <Button fx:id="login_btn" mnemonicParsing="false" onAction="#login" text="Login" />
                 <Label fx:id="error_lbl" styleClass="error_lbl" />
             </children>
