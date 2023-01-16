@@ -1,0 +1,141 @@
+.left_container {
+   -fx-background-color: #0fa498;
+}
+
+.left_container VBox {
+    -fx-padding: 0 24px 0 24px;
+}
+
+.left_container VBox Text {
+    -fx-font-size: 16px;
+    -fx-fill: #e8fff9;
+}
+
+.left_container VBox TextField {
+    -fx-background-color: #d9f6ff;
+    -fx-padding: 2px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #046994;
+}
+
+.left_container #delete_btn {
+    -fx-background-color: #cc0322;
+    -fx-border-style: none;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-padding: 2.5px;
+    -fx-font-weight: bold;
+}
+
+.left_container #delete_btn:hover {
+    -fx-background-color: #e7344c;
+    -fx-effect: dropshadow(two-pass-box, #e87979,1,1,1,1);
+}
+
+
+.left_container #update_btn {
+    -fx-background-color: #f1c411;
+    -fx-border-style: none;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-padding: 2.5px;
+    -fx-font-weight: bold;
+}
+
+.left_container #update_btn:hover {
+    -fx-background-color: #deb320;
+    -fx-effect: dropshadow(two-pass-box, #f3da83,1,1,1,1);
+}
+
+
+.left_container #insert_btn {
+    -fx-background-color: #16aff3;
+    -fx-border-style: none;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-padding: 2.5px;
+    -fx-font-weight: bold;
+}
+
+.left_container #insert_btn:hover {
+    -fx-background-color: #1b9ad3;
+    -fx-effect: dropshadow(two-pass-box, #54c5f8,1,1,1,1);
+}
+
+.right_container {
+    -fx-padding: 0 10px 0 20px;
+    -fx-background-color: #f2fffd;
+}
+
+.right_container #back_btn {
+    -fx-background-color: none;
+    -fx-border-style: none;
+}
+
+.right_container #back_btn FontAwesomeIconView:hover {
+    -fx-background-color: #ec2121;
+}
+
+.right_container #searsh_fld {
+    -fx-border-color: #367567;
+    -fx-background-color: #e5fff4;
+    -fx-border-radius: 10px;
+}
+
+.right_container #searsh_btn {
+    -fx-background-color: #086c68;
+    -fx-border-style: none;
+    -fx-border-radius: 17px;
+}
+
+.right_container #searsh_btn:hover{
+    -fx-background-color: #1f8883;
+}
+
+.right_container HBox {
+    -fx-padding: 0 16px 0 0;
+}
+
+.right_container HBox Button {
+    -fx-background-color: #566ff2;
+    -fx-text-fill: #FFFFFF;
+}
+
+#book_table{
+    -fx-background-color: rgba(200, 255, 222, 0.07);
+    -fx-text-background-color: #227a5a;
+}
+
+#book_table:hover {
+    -fx-background-color: rgba(200, 255, 222, 0.07);
+}
+
+#book_table:odd{
+    -fx-background-color: #96dac7;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+#book_table:even{
+    -fx-background-color: rgba(255, 255, 255, 0.07);
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+books_pane VBox {
+    -fx-alignment: center;
+}
+
+#books_pane1 VBox {
+    -fx-padding: 5px 5px 5px 5px;
+    -fx-border-color: #478d8d;
+    -fx-border-style: solid;
+    -fx-border-raduis: 10px;
+}
+
+#books_pane2 VBox {
+    -fx-padding: 5px 5px 5px 5px;
+    -fx-border-color: #478d8d;
+    -fx-border-style: solid;
+    -fx-border-raduis: 10px;
+}
