@@ -1,0 +1,52 @@
+.maner {
+    -fx-background-color: #EEEEEE;
+}
+
+.maner .leftbox {
+    -fx-background-color: #0fa498;
+    -fx-padding: 0 10px 0 20px;
+}
+
+.leftbox  Text {
+    -fx-fill: #EEEEEE;
+    -fx-font-size: 16px;
+}
+
+.leftbox Label {
+    -fx-padding: 5px 5px 5px 10px;
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+}
+
+.leftbox Label FontAwesomeIconView {
+    -fx-padding: 0 10px 0 0;
+}
+
+.leftbox #books_num {
+    -fx-border-radius: 10px;
+    -fx-background-color: linear-gradient(to right, #d02c2c, #c52555);
+    -fx-text-fill: #cff346;
+}
+
+.leftbox #std_num {
+    -fx-border-radius: 10px;
+    -fx-background-color: linear-gradient(to right, #5070c2, #1e3ac9);
+    -fx-text-fill: #e1ece8;
+
+}
+
+.leftbox #res_num {
+    -fx-border-radius: 10px;
+    -fx-background-color: linear-gradient(to right, #f4ff00, #ff9e0d);
+    -fx-text-fill: #b00a0a;
+
+}
+
+.leftbox #back_btn {
+    -fx-background-color: none;
+    -fx-border-style: none;
+}
+
+.leftbox #back_btn:hover FontAwesomeIconView {
+    -fx-background-color: #d20012;
+}
