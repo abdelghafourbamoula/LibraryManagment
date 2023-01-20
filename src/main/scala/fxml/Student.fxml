@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" stylesheets="@../style/booksAdmin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentController">
+    <left>
+        <VBox prefHeight="600.0" prefWidth="382.0" styleClass="left_container" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane prefHeight="194.0" prefWidth="382.0">
+                    <children>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="22.0" layoutY="109.0" size="60" text="" />
+                        <Label layoutX="78.0" layoutY="39.0" prefHeight="42.0" prefWidth="213.0" text="Welcome" textFill="#edfff0" AnchorPane.leftAnchor="78.0" AnchorPane.topAnchor="39.0">
+                            <font>
+                                <Font name="Franklin Gothic Demi Cond" size="24.0" />
+                            </font>
+                        </Label>
+                  <Label fx:id="name" layoutX="78.0" layoutY="76.0" prefHeight="42.0" prefWidth="213.0" textFill="#edfff0">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="36.0" />
+                     </font>
+                  </Label>
+                    </children>
+                </AnchorPane>
+                <VBox prefHeight="200.0" prefWidth="100.0" spacing="12.0">
+                    <children>
+                  <Text layoutX="34.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Book" />
+                  <Label fx:id="idbook_lbl" layoutX="34.0" layoutY="44.0" prefHeight="18.0" prefWidth="319.0" textFill="#beffcf">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                        <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book" />
+                  <Label fx:id="book_lbl" layoutX="34.0" layoutY="44.0" prefHeight="18.0" prefWidth="319.0" textFill="#beffcf">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                        <Text layoutX="10.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Reservation" />
+                  <DatePicker fx:id="res_date" prefHeight="26.0" prefWidth="328.0" />
+                        <Text layoutX="10.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Return" />
+                  <DatePicker fx:id="return_date" prefHeight="26.0" prefWidth="330.0" />
+                        <HBox spacing="10.0" />
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" prefHeight="101.0" prefWidth="382.0" spacing="30.0">
+                    <children>
+                        <Button fx:id="delete_btn" mnemonicParsing="false" onAction="#cancelStd" prefHeight="26.0" prefWidth="74.0" text="Cancel" />
+                        <Button fx:id="update_btn" mnemonicParsing="false" onAction="#Reserve" prefHeight="26.0" prefWidth="87.0" text="Reserver" />
+                    </children>
+                </HBox>
+                <Label fx:id="error_lbl" prefHeight="18.0" prefWidth="380.0" textFill="#ff4d4d">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" styleClass="right_container" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane prefHeight="62.0" prefWidth="787.0">
+                    <children>
+                        <Button fx:id="back_btn" layoutX="-1.0" layoutY="10.0" mnemonicParsing="false" onAction="#toManer">
+                            <graphic>
+                                <FontAwesomeIconView fill="#a61613" glyphName="ARROW_LEFT" size="24" text="" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="searsh_btn" layoutX="719.0" layoutY="17.0" mnemonicParsing="false" onAction="#searshBook" prefHeight="16.0" prefWidth="58.0">
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="20" />
+                            </graphic>
+                        </Button>
+                        <TextField fx:id="searsh_fld" layoutX="530.0" layoutY="18.0" prefHeight="26.0" prefWidth="178.0" />
+                        <Label layoutX="470.0" layoutY="22.0" prefHeight="20.0" prefWidth="47.0" text="searsh">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            <HBox prefHeight="490.0" prefWidth="778.0" spacing="5.0">
+               <children>
+                  <VBox prefHeight="490.0" prefWidth="811.0">
+                     <children>
+                        <Label style="-fx-padding: 0 0 5px 10px;" text="Books" textFill="#1d6e53">
+                           <graphic>
+                              <FontAwesomeIconView fill="#25864c" glyphName="BOOK" />
+                           </graphic>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="books_table" onMouseClicked="#getSelectedBook" prefHeight="458.0" prefWidth="897.0">
+                          <columns>
+                            <TableColumn fx:id="id_col" prefWidth="104.00005912780762" text="Id" />
+                            <TableColumn fx:id="title_col" prefWidth="247.19995880126953" text="Title" />
+                              <TableColumn fx:id="author_col" prefWidth="231.19998168945312" text="Author" />
+                              <TableColumn fx:id="pub_col" prefWidth="183.2000610351563" text="Publication Date" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <VBox />
+               </children>
+            </HBox>
+                <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="787.0" spacing="10.0">
+                    <children>
+                        <Button mnemonicParsing="false" text="&lt;&lt;" />
+                        <Button mnemonicParsing="false" text="&lt;" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="&gt;" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="&gt;&gt;" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
