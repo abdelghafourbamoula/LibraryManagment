@@ -17,7 +17,7 @@ object App extends JFXApp3 {
 
   override def start(): Unit = {
     //println(getClass.getResource("../fxml/login.fxml"))
-    val root = FXMLView(getClass.getResource("../fxml/login.fxml"), NoDependencyResolver)
+    val root = FXMLView(getClass.getResource("../fxml/Dashboard.fxml"), NoDependencyResolver)
     val sc = new Scene(root)
     this.show("Login", sc)
   }

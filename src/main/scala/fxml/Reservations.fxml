@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" stylesheets="@../style/booksAdmin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Reservations">
+    <left>
+        <VBox prefHeight="600.0" prefWidth="382.0" styleClass="left_container" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane prefHeight="136.0" prefWidth="382.0">
+                    <children>
+                        <Label layoutX="99.0" layoutY="47.0" prefHeight="42.0" prefWidth="213.0" text="Reservations" textFill="#edfff0" AnchorPane.leftAnchor="99.0" AnchorPane.topAnchor="47.0">
+                            <font>
+                                <Font name="Franklin Gothic Demi Cond" size="36.0" />
+                            </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#edfff0" glyphName="TICKET" layoutX="20.0" layoutY="85.0" size="60" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="33.57143020629883" />
+                    </children>
+                </AnchorPane>
+                <VBox prefHeight="200.0" prefWidth="100.0" spacing="12.0">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CNE" />
+                  <Label fx:id="cne_lbl" prefHeight="18.0" prefWidth="319.0" textFill="#c5ffd5">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                        <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book" />
+                  <Label fx:id="book_lbl" layoutX="34.0" layoutY="44.0" prefHeight="18.0" prefWidth="319.0" textFill="#beffcf">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                        <Text layoutX="10.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Reservation" />
+                  <DatePicker fx:id="res_date" prefHeight="26.0" prefWidth="328.0" />
+                        <Text layoutX="10.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Return" />
+                  <DatePicker fx:id="return_date" prefHeight="26.0" prefWidth="330.0" />
+                        <HBox spacing="10.0" />
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" prefHeight="101.0" prefWidth="382.0" spacing="30.0">
+                    <children>
+                        <Button fx:id="delete_btn" mnemonicParsing="false" onAction="#deleteRes" prefHeight="26.0" prefWidth="74.0" text="Delete" />
+                        <Button fx:id="update_btn" mnemonicParsing="false" onAction="#updateRes" prefHeight="26.0" prefWidth="87.0" text="Update" />
+                    </children>
+                </HBox>
+                <Label fx:id="error_lbl" prefHeight="18.0" prefWidth="380.0" textFill="#ff4d4d">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" styleClass="right_container" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane prefHeight="74.0" prefWidth="787.0">
+                    <children>
+                        <Button fx:id="back_btn" layoutX="-1.0" layoutY="10.0" mnemonicParsing="false" onAction="#toManer">
+                            <graphic>
+                                <FontAwesomeIconView fill="#a61613" glyphName="ARROW_LEFT" size="24" text="" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="searsh_btn" layoutX="719.0" layoutY="17.0" mnemonicParsing="false" onAction="#searshRes" prefHeight="16.0" prefWidth="58.0">
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="20" />
+                            </graphic>
+                        </Button>
+                        <TextField fx:id="searsh_fld" layoutX="530.0" layoutY="18.0" prefHeight="26.0" prefWidth="178.0" />
+                        <Label layoutX="470.0" layoutY="22.0" prefHeight="20.0" prefWidth="47.0" text="searsh">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            <HBox prefHeight="490.0" prefWidth="787.0" spacing="5.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label style="-fx-padding: 0 0 5px 10px;" text=" Reservations" textFill="#1d6e53">
+                           <graphic>
+                              <FontAwesomeIconView fill="#25864c" glyphName="BOOK" />
+                           </graphic>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="reservations_table" onMouseClicked="#getSelectedRes" prefHeight="458.0" prefWidth="646.0">
+                          <columns>
+                            <TableColumn fx:id="cne_res" prefWidth="75.0" text="CNE" />
+                            <TableColumn fx:id="book_res" prefWidth="75.0" text="Book" />
+                              <TableColumn fx:id="resdate_res" prefWidth="128.79998779296875" text="Reservation Date" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <VBox>
+                     <children>
+                        <Label style="-fx-padding: 0 0 5px 10px;" text=" History" textFill="#218457">
+                           <graphic>
+                              <FontAwesomeIconView fill="#1f9459" glyphName="HISTORY" />
+                           </graphic>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="hist_table" onMouseClicked="#getSelectedHist" prefHeight="458.0" prefWidth="629.0">
+                           <columns>
+                              <TableColumn fx:id="cne_hist" prefWidth="75.0" text="CNE" />
+                              <TableColumn fx:id="book_hist" prefWidth="75.0" text="Book" />
+                              <TableColumn fx:id="res_hist" prefWidth="116.0" text="Reservation" />
+                              <TableColumn fx:id="ret_hist" prefWidth="116.0" text="Return" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+                <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="787.0" spacing="10.0">
+                    <children>
+                        <Button mnemonicParsing="false" text="&lt;&lt;" />
+                        <Button mnemonicParsing="false" text="&lt;" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="&gt;" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="&gt;&gt;" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

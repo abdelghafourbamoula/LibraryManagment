@@ -89,7 +89,7 @@ class BooksAdmin (
 
     if (r != 0) {
       error_lbl.setText("Book Deleted Sucessfully !")
-      error_lbl.setStyle("-fx-text-fill: #07b74b;")
+      error_lbl.setStyle("-fx-text-fill: #f2fffd;")
       showBooks()
     } else {
       error_lbl.setText("Fieled to Delete Book !")
@@ -110,7 +110,7 @@ class BooksAdmin (
     val r = ConnectDB.updateBook(book)
     if (r != 0) {
       error_lbl.setText("Book Updated Sucessfully !")
-      error_lbl.setStyle("-fx-text-fill: #07b74b;")
+      error_lbl.setStyle("-fx-text-fill: #f2fffd;")
       showBooks()
     } else {
       error_lbl.setText("Fieled to update Book !")
@@ -130,7 +130,7 @@ class BooksAdmin (
     val r = ConnectDB.isertBook(book)
     if (r != 0) {
       error_lbl.setText("Book Inserted Sucessfully !")
-      error_lbl.setStyle("-fx-text-fill: #07b74b;")
+      error_lbl.setStyle("-fx-text-fill: #f2fffd;")
     } else {
       error_lbl.setText("Fieled to Inset Book !")
       error_lbl.setStyle("-fx-text-fill: #d02c2c;")

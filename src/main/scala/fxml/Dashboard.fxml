@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.StackedAreaChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" styleClass="maner" stylesheets="@../style/dashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Dashboard">
+   <left>
+      <VBox prefHeight="600.0" prefWidth="254.0" spacing="20.0" styleClass="leftbox" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="84.0" prefWidth="322.0" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="36.0" />
+               </font>
+            </Label>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Books" />
+            <Label fx:id="books_num" alignment="CENTER" prefHeight="18.0" prefWidth="182.0" text="34">
+               <graphic>
+                  <FontAwesomeIconView fill="#e3fa7f" glyphName="BOOK" wrappingWidth="50.0" />
+               </graphic>
+            </Label>
+            <Text layoutX="10.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Students" />
+            <Label fx:id="std_num" alignment="CENTER" layoutX="10.0" layoutY="45.0" prefHeight="18.0" prefWidth="176.0" text="32">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" wrappingWidth="50.0" />
+               </graphic>
+            </Label>
+            <Text layoutX="10.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Reservations" />
+            <Label fx:id="res_num" alignment="CENTER" layoutX="10.0" layoutY="80.0" prefHeight="18.0" prefWidth="177.0" text="11">
+               <graphic>
+                  <FontAwesomeIconView fill="#b01717" glyphName="TICKET" wrappingWidth="50.0" />
+               </graphic>
+            </Label>
+            <AnchorPane prefHeight="82.0" prefWidth="224.0">
+               <children>
+                  <Button fx:id="back_btn" layoutY="50.0" mnemonicParsing="false" onAction="#toManer">
+                     <graphic>
+                        <FontAwesomeIconView fill="#f45f5f" glyphName="ARROW_LEFT" selectionFill="#d40202" size="28" />
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" style="-fx-padding: 10px;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="326.0" prefWidth="746.0" spacing="5.0">
+               <children>
+                  <BarChart fx:id="books_bar">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <PieChart fx:id="books_pie" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="320.0" prefWidth="746.0" spacing="5.0">
+               <children>
+                  <StackedAreaChart fx:id="res_line">
+                    <xAxis>
+                      <NumberAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </StackedAreaChart>
+                  <BarChart fx:id="author_bar">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

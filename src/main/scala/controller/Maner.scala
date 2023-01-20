@@ -1,5 +1,6 @@
 package controller
 
+import controller.App.getClass
 import scalafx.Includes._
 import scalafx.application.JFXApp3
 import scalafx.event.ActionEvent
@@ -31,11 +32,23 @@ class Maner (
     App.show("Login",scene)
   }
 
-  def toBooks(e: ActionEvent): Unit = {}
+  def toBooks(e: ActionEvent): Unit = {
+    val root = FXMLView(getClass.getResource("../fxml/BooksAdmin.fxml"), NoDependencyResolver)
+    val scene = new Scene(root)
+    App.show("Login", scene)
+  }
 
-  def toReservations(e: ActionEvent): Unit = {}
+  def toReservations(e: ActionEvent): Unit = {
+    val root = FXMLView(getClass.getResource("../fxml/Reservations.fxml"), NoDependencyResolver)
+    val scene = new Scene(root)
+    App.show("Reservations", scene)
+  }
 
-  def toStudents(e: ActionEvent): Unit = {}
+  def toStudents(e: ActionEvent): Unit = {
+      val root = FXMLView(getClass.getResource("../fxml/StudentAdmin.fxml"), NoDependencyResolver)
+      val scene = new Scene(root)
+      App.show("Students Managment", scene)
+  }
 
   def toDashboard(e: ActionEvent): Unit = {}
 
