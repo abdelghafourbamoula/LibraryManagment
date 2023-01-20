@@ -39,6 +39,17 @@ object ConnectDB {
         return Array()
   }
 
+  def loginStd(username: String, password: String): String = {
+    val statement = connection.createStatement()
+    val rs = statement.executeQuery(s"SELECT * FROM Student WHERE cne='$username' AND password='$password';")
+    if (rs.next) {
+      val cne = rs.getString("cne")
+      return cne
+    }
+    else
+      return ""
+  }
+
   def updateAdmin(admin:Array[String]): Int ={
     val st = connection.createStatement()
     val rs = st.executeUpdate(s"UPDATE Admin SET firstName='${admin(1)}', lastName='${admin(2)}', username='${admin(3)}'," +
@@ -197,7 +208,41 @@ object ConnectDB {
       return "0"
   }
 
+  def getBooksForStudent(): ObservableBuffer[Books] = {
+    var books = ObservableBuffer[Books]()
+    val statement = connection.createStatement()
+    var rs = statement.executeQuery(s"SELECT * FROM Book;")
 
+    while (rs.next) {
+      val idbook = rs.getString("idBook")
+      val title = rs.getString("title")
+      val author = rs.getString("author")
+      val pub = rs.getString("publication")
+      books += Books(idbook, title, author, pub)
+    }
+    return books
+  }
 
+  def insertReservation(reservation: Reservation):Int ={
+    val st = connection.createStatement()
+    val rs = st.executeUpdate(s"INSERT INTO Reservation VALUES ('${reservation.idbook}', '${reservation.cne}', '${reservation.res}', '${reservation.ret}');")
+    return rs
+  }
+
+  def searshBooksForStudent(searsh:String): ObservableBuffer[Books] = {
+    var books = ObservableBuffer[Books]()
+    val statement = connection.createStatement()
+
+    val rs = statement.executeQuery(s"SELECT * FROM Book WHERE LOWER(title) LIKE '%${searsh.toLowerCase()}%' OR LOWER(author) LIKE '%${searsh.toLowerCase()}%';")
+
+    while (rs.next) {
+      val idbook = rs.getString("idBook")
+      val title = rs.getString("title")
+      val author = rs.getString("title")
+      val pub = rs.getString("publication")
+      books += Books(idbook, title, author,pub)
+    }
+    return books
+  }
   //  this.connection.close()
 }

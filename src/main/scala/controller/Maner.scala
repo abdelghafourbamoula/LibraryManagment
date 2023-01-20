@@ -50,7 +50,11 @@ class Maner (
       App.show("Students Managment", scene)
   }
 
-  def toDashboard(e: ActionEvent): Unit = {}
+  def toDashboard(e: ActionEvent): Unit = {
+    val root = FXMLView(getClass.getResource("../fxml/Dashboard.fxml"), NoDependencyResolver)
+    val scene = new Scene(root)
+    App.show("Students Managment", scene)
+  }
 
 
 }

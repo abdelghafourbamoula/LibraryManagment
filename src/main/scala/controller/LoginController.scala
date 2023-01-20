@@ -1,6 +1,7 @@
 package controller
 
 
+import model.Student
 import scalafx.Includes._
 import scalafx.application.{JFXApp, JFXApp3}
 import scalafx.collections.ObservableBuffer
@@ -35,7 +36,16 @@ class LoginController(
         error_lbl.setText("Authentification Fieled: Incorrect username / password")
     }
     else if(type_ == "STUDENT"){
-      // TODO: student authentification
+      val std = ConnectDB.loginStd(username_fld.getText(), password_fld.getText())
+
+      if (std.length != 0) {
+        App.cne = std
+        val root = FXMLView(getClass.getResource("../fxml/Student.fxml"), NoDependencyResolver)
+        val scene = new Scene(root)
+        App.show("Admin Maner", scene)
+      }
+      else
+        error_lbl.setText("Authentification Fieled: Incorrect username / password")
     }
     else {
       error_lbl.setText("Please Select Your Account Type !")
